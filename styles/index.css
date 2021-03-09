@@ -1,0 +1,45 @@
+:root {
+  --gray-2: #4f4f4f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 20px 10px;
+}
+
+.main {
+  margin-top: 15px;
+}
+
+.main__info--title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 31.99px;
+}
+
+.main__info--content {
+  margin-top: 5px;
+  padding: 0 30px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 14.63px;
+  font-style: italic;
+  color: var(--gray-2);
+}
+
+.main__info--img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+}
