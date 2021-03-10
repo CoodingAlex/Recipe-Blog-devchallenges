@@ -1,5 +1,6 @@
 :root {
   --gray-2: #4f4f4f;
+  --grey-4: #bdbdbd;
 }
 
 * {
@@ -14,23 +15,32 @@ html {
 
 body {
   padding: 20px 10px;
+  counter-reset: instructions;
+}
+
+li {
+  list-style: none;
 }
 
 .main {
   margin-top: 15px;
 }
-
-.main__info--title {
+.main__title--title {
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 31.99px;
 }
 
-.main__info--content {
+.main__title--content {
+  display: flex;
   margin-top: 5px;
-  padding: 0 30px 10px;
+  padding: 0 10px 10px;
+}
+
+.main__title--content p {
   font-family: 'Montserrat', sans-serif;
+  margin-left: 10px;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 14.63px;
@@ -38,8 +48,187 @@ body {
   color: var(--gray-2);
 }
 
-.main__info--img {
+.main__title img {
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+.main__title--img {
   width: 100%;
   margin-top: 10px;
   border-radius: 12px;
+}
+
+.main__info {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.main__info--times {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.times__card {
+  margin-right: 42px;
+  margin-top: 15px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+.times__card.yield {
+  width: 100%;
+  color: #f2994a;
+}
+
+.times__card--img {
+  margin-right: 5px;
+}
+
+.times__card--info h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 9.75px;
+  color: var(--grey-4);
+}
+
+.times__card--info p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 12.19px;
+}
+
+.main__info--steps {
+}
+
+.main__info--steps h2 {
+  margin-top: 30px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 23.99px;
+}
+.steps__ingredients p {
+  margin-top: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 21.33px;
+  font-style: italic;
+}
+.steps__ingredients ul {
+  margin-top: 24px;
+}
+.steps__ingredients li {
+  margin-top: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 21.33px;
+}
+
+.steps__ingredients li::before {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  content: '';
+  border: 1px solid #828282;
+  border-radius: 4px;
+}
+
+.setps__instructions span {
+  margin-right: 10px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #f2994a;
+  color: white;
+}
+
+/*Automatic content in the list!!*/
+.setps__instructions span::before {
+  counter-increment: instructions;
+  content: counter(instructions);
+}
+
+.setps__instructions li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  margin-top: 12px;
+  padding-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (min-width: 1000px) {
+  body {
+    padding: 20px 250px;
+  }
+
+  .main__title--title {
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 63.98px;
+  }
+
+  .main__title--content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    line-height: 17.07px;
+    width: 60%;
+  }
+
+  .main__info {
+    margin-top: 50px;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .main__info--times {
+    grid-column: 2;
+    justify-self: center;
+    display: flex;
+    height: 350px;
+    width: 200px;
+    padding: 30px 5px;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+
+  .times__card {
+    margin: 0;
+    display: grid;
+    width: fit-content;
+    grid-template-columns: 1fr 4fr;
+  }
+  .times__card--info h3 {
+    font-size: 1rem;
+  }
+  .times__card--info p {
+    font-size: 1.4rem;
+  }
+  .times__card--info h3 {
+    font-size: 1rem;
+  }
+  .times__card.yield {
+    width: auto;
+  }
+  .times__card--img {
+    margin-right: 10px;
+  }
+
+  .main__info--steps {
+    grid-column: 1;
+    grid-row: 1;
+  }
 }
